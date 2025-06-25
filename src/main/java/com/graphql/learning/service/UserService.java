@@ -21,4 +21,11 @@ public class UserService {
     public String getHelloMessage() {
         return "Hello from GraphQL + Spring Boot!";
     }
+
+    public User createUser(String id, String name, String email) {
+        User user = new User(id, name, email);
+        users.put(id, user);
+        return user;
+    }
+
 }
