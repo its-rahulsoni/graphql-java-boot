@@ -4,6 +4,7 @@ import com.graphql.learning.pojo.User;
 import com.graphql.learning.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.graphql.data.method.annotation.Argument;
+import org.springframework.graphql.data.method.annotation.MutationMapping;
 import org.springframework.graphql.data.method.annotation.QueryMapping;
 import org.springframework.stereotype.Controller;
 
@@ -21,6 +22,11 @@ public class UserController {
     @QueryMapping
     public User user(@Argument String id) {
         return userService.getUserById(id);
+    }
+
+    @MutationMapping
+    public User createUser(@Argument String id, @Argument String name, @Argument String email) {
+        return userService.createUser(id, name, email);
     }
 }
 
