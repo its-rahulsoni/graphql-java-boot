@@ -1,0 +1,12 @@
+# Query is the entry point for read operations.
+type Query {
+  hello: String
+  user(id: ID!): User
+}
+
+# User is a custom object type with fields and their types.User
+type User {
+  id: ID!
+  name: String!
+  email: String!
+}
