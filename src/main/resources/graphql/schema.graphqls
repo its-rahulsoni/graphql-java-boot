@@ -11,6 +11,7 @@ type Query {
 # Returns a User object
 type Mutation {
   createUser(id: ID!, name: String!, email: String!): User
+  createUserWithInputArgument(input: CreateUserInput!): User
 }
 
 type Post {
