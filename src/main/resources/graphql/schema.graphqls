@@ -1,3 +1,5 @@
+# Note: There can be only 1 Query inside one schema file. We can have multiple schema files.
+
 # Query is the entry point for read operations.
 type Query {
   hello: String
