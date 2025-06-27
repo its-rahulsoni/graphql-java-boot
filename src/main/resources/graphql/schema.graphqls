@@ -4,6 +4,7 @@
 type Query {
   hello: String
   user(id: ID!): User
+  welcome: String
 }
 
 # Declares a mutation that takes id, name, and email as input
@@ -12,11 +13,18 @@ type Mutation {
   createUser(id: ID!, name: String!, email: String!): User
 }
 
+type Post {
+  id: ID!
+  title: String!
+  content: String!
+}
 
 # User is a custom object type with fields and their types.User
 type User {
   id: ID!
   name: String!
   email: String!
+  posts: [Post!]!
 }
+
 

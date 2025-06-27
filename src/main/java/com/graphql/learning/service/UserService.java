@@ -28,4 +28,8 @@ public class UserService {
         return user;
     }
 
+    public String getWelcomeMessage() {
+        return "Welcome from GraphQL + Spring Boot!!!!";
+    }
+
 }
