@@ -1,5 +1,6 @@
 package com.graphql.learning.service;
 
+import com.graphql.learning.pojo.CreateUserInput;
 import com.graphql.learning.pojo.User;
 import org.springframework.stereotype.Service;
 
@@ -31,5 +32,12 @@ public class UserService {
     public String getWelcomeMessage() {
         return "Welcome from GraphQL + Spring Boot!!!!";
     }
+
+    public User createUserWithInputArgument(CreateUserInput input) {
+        User user = new User(input.getId(), input.getName(), input.getEmail());
+        users.put(user.getId(), user);
+        return user;
+    }
+
 
 }
