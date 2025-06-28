@@ -47,5 +47,10 @@ public class UserController {
     public String welcomeMessage() {
         return userService.getWelcomeMessage();
     }
+
+    @QueryMapping
+    public User customException(@Argument String id) {
+        return userService.getUserByIdCustomException(id);
+    }
 }
 
