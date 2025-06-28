@@ -6,6 +6,8 @@ type Query {
   user(id: ID!): User
   welcome: String
   customException(id: ID!): User
+  allUsers: [IUser!]! # Interface ....
+  search(text: String!): [SearchResult!]! # Union ....
 }
 
 # Declares a mutation that takes id, name, and email as input
