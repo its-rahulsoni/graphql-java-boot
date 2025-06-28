@@ -1,5 +1,6 @@
 package com.graphql.learning.service;
 
+import com.graphql.learning.exception.UserNotFoundException;
 import com.graphql.learning.pojo.CreateUserInput;
 import com.graphql.learning.pojo.User;
 import org.springframework.stereotype.Service;
@@ -36,6 +37,14 @@ public class UserService {
     public User createUserWithInputArgument(CreateUserInput input) {
         User user = new User(input.getId(), input.getName(), input.getEmail());
         users.put(user.getId(), user);
+        return user;
+    }
+
+    public User getUserByIdCustomException(String id) {
+        User user = users.get(id);
+        if (user == null) {
+            throw new UserNotFoundException(id);
+        }
         return user;
     }
 
